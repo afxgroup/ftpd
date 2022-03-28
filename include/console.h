@@ -1,34 +1,15 @@
 #pragma once
 
-#ifdef _3DS
-#include <3ds.h>
-#elif defined(__SWITCH__)
-#include <switch.h>
-#endif
-
-#if defined(_3DS) || defined(__SWITCH__)
 #define ESC(x) "\x1b[" #x
 #define RESET   ESC(0m)
-#define BLACK   ESC(30m)
-#define RED     ESC(31;1m)
-#define GREEN   ESC(32;1m)
-#define YELLOW  ESC(33;1m)
-#define BLUE    ESC(34;1m)
-#define MAGENTA ESC(35;1m)
-#define CYAN    ESC(36;1m)
-#define WHITE   ESC(37;1m)
-#else
-#define ESC(x)
-#define RESET
-#define BLACK
-#define RED
-#define GREEN
-#define YELLOW
-#define BLUE
-#define MAGENTA
-#define CYAN
-#define WHITE
-#endif
+#define BKGRND  ESC(30;1m) // CONSOLE BACKGROUND - was BLACK
+#define BLACK   ESC(31;1m) // BLACK - was RED
+#define WHITE   ESC(32;1m) // WHITE - was GREEN
+#define BLUE    ESC(33;1m) // BLUE - was YELLOW
+#define RED     ESC(34;1m) // RED - was BLUE
+#define YELLOW  ESC(35;1m) // GRAY1 - was MAGENTA
+#define GREEN   ESC(36;1m) // GRAY2 - was CYAN
+#define CYAN    ESC(37;1m) // GRAY3 - was WHITE
 
 void console_init(void);
 
